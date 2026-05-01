@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* TradeFlow — dark fintech by default */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 40% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 44% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 152 76% 44%;            /* emerald */
+    --primary-foreground: 222 47% 6%;
+    --primary-glow: 152 84% 56%;
+
+    --secondary: 217 91% 60%;          /* electric blue */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 14%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --profit: 152 76% 48%;
+    --loss: 0 84% 62%;
+
+    --border: 222 30% 16%;
+    --input: 222 30% 16%;
+    --ring: 152 76% 44%;
+
+    --radius: 0.9rem;
+
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 215 20% 75%;
+    --sidebar-primary: 152 76% 44%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 35% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 30% 14%;
+    --sidebar-ring: 152 76% 44%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(152 76% 44%), hsl(170 84% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(222 50% 10% / 0.9), hsl(217 91% 20% / 0.5));
+    --gradient-card: linear-gradient(160deg, hsl(222 40% 11%), hsl(222 47% 8%));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%), hsl(152 76% 44%));
+
+    --shadow-elegant: 0 20px 60px -20px hsl(152 76% 44% / 0.25);
+    --shadow-card: 0 8px 30px -10px hsl(222 60% 2% / 0.6);
+    --shadow-glow: 0 0 40px hsl(152 84% 56% / 0.35);
+  }
+
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 8%;
+    --primary: 152 76% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 91% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 45%;
+    --accent: 217 91% 55%;
+    --accent-foreground: 0 0% 100%;
+    --border: 214 32% 88%;
+    --input: 214 32% 88%;
+    --ring: 152 76% 38%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 30% 25%;
+    --sidebar-accent: 210 40% 94%;
+    --sidebar-accent-foreground: 222 47% 8%;
+    --sidebar-border: 214 32% 88%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html, body, #root { @apply h-full; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+    background-image:
+      radial-gradient(at 10% 0%, hsl(152 76% 20% / 0.15) 0px, transparent 50%),
+      radial-gradient(at 90% 10%, hsl(217 91% 30% / 0.18) 0px, transparent 50%);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(222 40% 10% / 0.6);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid hsl(222 30% 20% / 0.6);
+  }
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-card { background: var(--gradient-card); }
+  .gradient-hero { background: var(--gradient-hero); }
+  .text-profit { color: hsl(var(--profit)); }
+  .text-loss { color: hsl(var(--loss)); }
+  .bg-profit\/10 { background-color: hsl(var(--profit) / 0.1); }
+  .bg-loss\/10 { background-color: hsl(var(--loss) / 0.1); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .shadow-card-soft { box-shadow: var(--shadow-card); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .ticker-track {
+    animation: ticker 40s linear infinite;
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(222 30% 16% / 0.6) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(222 30% 16% / 0.6) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+}

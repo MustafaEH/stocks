@@ -1,0 +1,4 @@
+DATABASE_URL = "postgresql://postgres:mustafa@localhost/stocksDB"
+SECRET_KEY = "your-secret-key-change-in-production"
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
