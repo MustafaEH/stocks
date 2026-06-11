@@ -1,5 +1,7 @@
 # Stocks Tradeflow — Trading Demo Application
 
+![Architecture diagram](assets/architecture.svg)
+
 Brief
 -----
 
