@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 
 from jose import jwt
 
-from app.config import settings
+from .config import settings
 
 
 def hash_password(password: str) -> str:

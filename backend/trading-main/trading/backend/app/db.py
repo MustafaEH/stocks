@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 from urllib.parse import urlparse
 
-from app.config import settings
+from .config import settings
 
 # Parse the DATABASE_URL to add sslmode if needed for production
 def get_database_url() -> str:

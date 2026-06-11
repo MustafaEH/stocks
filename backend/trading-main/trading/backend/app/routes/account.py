@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.dependencies import get_current_user
+from ..dependencies import get_current_user
 
-from app.db import get_db
-from app.models import Account, User
-from app.schemas import BalanceResponse, DepositRequest, DepositResponse
+from ..db import get_db
+from ..models import Account, User
+from ..schemas import BalanceResponse, DepositRequest, DepositResponse
 
 router = APIRouter(prefix="/account", tags=["account"])
 

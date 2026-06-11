@@ -2,10 +2,10 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
-from app.db import get_db
-from app.dependencies import get_current_user
-from app.models import Account, Portfolio, User, Stock, Transaction as TransactionModel
-from app.schemas import PortfolioItem, SellResponse, TradeRequest, BuyResponse 
+from ..db import get_db
+from ..dependencies import get_current_user
+from ..models import Account, Portfolio, User, Stock, Transaction as TransactionModel
+from ..schemas import PortfolioItem, SellResponse, TradeRequest, BuyResponse 
 
 router = APIRouter(prefix="/portfolio", tags=["portfolio"])
 

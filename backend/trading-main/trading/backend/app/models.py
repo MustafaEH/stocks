@@ -1,6 +1,6 @@
 from sqlalchemy import TIMESTAMP, Column, ForeignKey, Integer, Numeric, String, text
 
-from app.db import Base
+from .db import Base
 
 
 class User(Base):

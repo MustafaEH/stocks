@@ -2,10 +2,10 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
 
-from app.db import get_db
-from app.dependencies import get_current_user
-from app.models import Account, User, Stock, Transaction as TransactionModel
-from app.schemas import TradeRequest, BuyResponse
+from ..db import get_db
+from ..dependencies import get_current_user
+from ..models import Account, User, Stock, Transaction as TransactionModel
+from ..schemas import TradeRequest, BuyResponse
 
 router = APIRouter(prefix="/buy", tags=["buy"])
 

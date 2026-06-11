@@ -4,16 +4,16 @@ from fastapi.security import OAuth2PasswordRequestForm
 from contextlib import asynccontextmanager
 import logging
 
-from app.config import settings
-from app.routes.auth import router as auth_router
-from app.routes.account import router as account_router
-from app.routes.stocks import router as stocks_router
-from app.routes.trade import router as buy_router
-from app.dependencies import get_current_user
-from app.routes.portfolio import router as portfolio_router
-from app.routes.transactions import router as transactions_router
-from app.routes.health import router as health_router
-from app.db import engine
+from .config import settings
+from .routes.auth import router as auth_router
+from .routes.account import router as account_router
+from .routes.stocks import router as stocks_router
+from .routes.trade import router as buy_router
+from .dependencies import get_current_user
+from .routes.portfolio import router as portfolio_router
+from .routes.transactions import router as transactions_router
+from .routes.health import router as health_router
+from .db import engine
 from sqlalchemy import text
 
 # Configure logging
