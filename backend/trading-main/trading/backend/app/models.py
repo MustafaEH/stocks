@@ -1,4 +1,4 @@
-from sqlalchemy import TIMESTAMP, Column, ForeignKey, Integer, Numeric, String, text
+from sqlalchemy import TIMESTAMP, Column, ForeignKey, Integer, Numeric, String, func
 
 from .db import Base
 
@@ -11,7 +11,7 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     username = Column(String, unique=True, index=True, nullable=False)
     password_hash = Column(String, nullable=False)
-    created_at = Column(TIMESTAMP(timezone=True), server_default=text("now()"))
+    created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())
 
 
 class Account(Base):
@@ -20,7 +20,7 @@ class Account(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), unique=True, nullable=False, index=True)
     balance = Column(Numeric(15, 2), nullable=False, default=0)
-    created_at = Column(TIMESTAMP(timezone=True), server_default=text("now()"))
+    created_at = Column(TIMESTAMP(timezone=True), server_default=func.now())
 
 class Stock(Base):
     __tablename__ = "stocks"
@@ -40,7 +40,7 @@ class Transaction(Base):
     quantity = Column(Integer, nullable=False)
     unit_price = Column(Numeric(15, 2), nullable=False)
     total_price = Column(Numeric(15, 2), nullable=False)
-    done_at = Column(TIMESTAMP(timezone=False), nullable=False, server_default=text("now()"))
+    done_at = Column(TIMESTAMP(timezone=False), nullable=False, server_default=func.now())
     symbol = Column(String, nullable=False)
 
 

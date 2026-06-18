@@ -13,14 +13,13 @@ class UserCreate(BaseModel):
 
 
 class UserResponse(BaseModel):
+    model_config = {"from_attributes": True}
+    
     id: int
     full_name: str
     email: str
     username: str
     created_at: Optional[datetime] = None
-
-    class Config:
-        from_attributes = True
 
 
 class TokenResponse(BaseModel):

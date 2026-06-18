@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from ..dependencies import get_current_user
 
 from ..db import get_db
+from ..dependencies import get_current_user
 from ..models import Account, User
 from ..schemas import BalanceResponse, DepositRequest, DepositResponse
 
