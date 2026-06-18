@@ -61,12 +61,8 @@ Contributing and running locally
 - Backend: follow `backend/trading-main/README.md` for virtualenv, requirements, and tests
 - Frontend: follow `frontend/tradeflow-dashboard-main/README.md` for `npm`/`yarn` dev commands
 
-License
--------
-
-MIT
 
 Contact
 -------
 
-If you'd like a walkthrough or a short demo recording for hiring purposes, open an issue or reach out to the project owner.
+If you'd like a walkthrough or a short demo recording for hiring purposes, open an issue or reach out.
